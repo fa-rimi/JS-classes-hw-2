@@ -2,32 +2,32 @@
 class Hamster {
   constructor(owner, name, price) {
     this.owner = owner;
-    this.owner = '';
 
     this.name = name;
 
     this.price = price;
-    this.price = 15;
+    price = 15;
   }
   wheelRun() {
-    console.log('squeak squeak');
+    console.log("squeak squeak");
   }
   eatFood() {
-    console.log('nibble nibble');
+    console.log("nibble nibble");
   }
   getPrice() {
     return this.price;
   }
 }
 
-const h1 = new Hamster('Mo', 'Momo', 420);
+const h1 = new Hamster("Ri", "Momo", 4.21);
+// Hamster is essentially a template and when you're using new, 
+// you're saying im using this template to create this new version
 
 console.log(h1);
 h1.wheelRun();
 h1.eatFood();
-const price = h1.getPrice()
-console.log(price);
-
+const price = h1.getPrice();
+console.log(`I cost $${price}`);
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -59,46 +59,34 @@ class Person {
     return this.name;
   }
   getAge() {
-    return age;
+    return this.age;
   }
   getWeight() {
-    return weight;
+    return this.weight;
   }
   greet() {
     console.log(this.name);
   }
   eat() {
-    weight++, mood++;
+    this.weight++, this.mood++;
   }
   exercise() {
-    weight--;
+    this.weight--;
   }
   ageUp() {
-    age++, height++, weight++, mood--, this.bankAccount + 10;
+    this.age++, this.height++, this.weight++, this.mood--, this.bankAccount + 10;
   }
   buyHamster(hamster) {
-    this.hamsters.push(hamster)
-    mood += 10, 
-    bankAccount - getPrice();
+    this.hamsters.push(hamster);
+    this.mood += 10, 
+    this.bankAccount = this.bankAccount - getPrice();
   }
 }
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
 
 // CREATE A STORY WITH YOUR PERSON CLASS
+// name, age, height, weight, mood, hamsters, bankAccount
 
-// class Story extends Person {
-//   constructor(name, age, height, weight, mood, hamsters, bankAccount) {
-//     c1(name, age, height, weight, mood, hamsters, bankAccount);
-//     // precocious(){
-//     //     console.log('seen it all');
-//     //     weight+5;
-//     // }
-//     // kinderGarten() {
-//     //     weight-5;
-//     // }
-//   }
-// }
-// const mainCharacter = new Story('Timmy', '5', '', 'seen it all')
-
-// console.log(mainCharacter);
+const c1 = new Person('Timmy', '5', '', '65', 'seen it all', '0', '');
+console.log(c1);
