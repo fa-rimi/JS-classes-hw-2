@@ -2,7 +2,7 @@
 class Hamster {
   constructor(owner, name, price) {
     this.owner = owner;
-    this.owner = "";
+    this.owner = '';
 
     this.name = name;
 
@@ -10,27 +10,24 @@ class Hamster {
     this.price = 15;
   }
   wheelRun() {
-    console.log("squeak squeak");
+    console.log('squeak squeak');
   }
   eatFood() {
-    console.log("nibble nibble");
+    console.log('nibble nibble');
   }
   getPrice() {
-    return price;
+    return this.price;
   }
 }
 
-const h1 = new Hamster ("Mo", "Momo", true);
+const h1 = new Hamster('Mo', 'Momo', 420);
 
 console.log(h1);
-h1.wheelRun()
-h1.eatFood()
-h1.getPrice()
-if (h1 === 15) {
-    console.log(`${price}`);
-} else {
-    console.log(`${this.name} NOT FOR SALE!`);
-}
+h1.wheelRun();
+h1.eatFood();
+const price = h1.getPrice()
+console.log(price);
+
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -84,3 +81,23 @@ class Person {
     mood + 10, bankAccount - getPrice();
   }
 }
+
+// ++++++++++++++++++++++++++++++++++++++++++++++
+
+// CREATE A STORY WITH YOUR PERSON CLASS
+
+// class Story extends Person {
+//   constructor(name, age, height, weight, mood, hamsters, bankAccount) {
+//     c1(name, age, height, weight, mood, hamsters, bankAccount);
+//     // precocious(){
+//     //     console.log('seen it all');
+//     //     weight+5;
+//     // }
+//     // kinderGarten() {
+//     //     weight-5;
+//     // }
+//   }
+// }
+// const mainCharacter = new Story('Timmy', '5', '', 'seen it all')
+
+// console.log(mainCharacter);
