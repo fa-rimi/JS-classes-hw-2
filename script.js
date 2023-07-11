@@ -38,19 +38,19 @@ class Person {
     this.name = name;
 
     this.age = age;
-    this.age = 0;
+    age = 0;
 
     this.height = height;
-    this.height = 0;
+    height = 0;
 
     this.weight = weight;
-    this.weight = 0;
+    weight = 0;
 
     this.mood = mood;
-    this.mood = 0;
+    mood = 0;
 
     this.hamster = hamsters;
-    this.hamsters = [];
+    hamsters = [];
 
     this.bankAccount = bankAccount;
     this.bankAccount = 0;
@@ -77,8 +77,9 @@ class Person {
     age++, height++, weight++, mood--, this.bankAccount + 10;
   }
   buyHamster(hamster) {
-    hamster.push;
-    mood + 10, bankAccount - getPrice();
+    this.hamsters.push(hamster)
+    mood += 10, 
+    bankAccount - getPrice();
   }
 }
 
