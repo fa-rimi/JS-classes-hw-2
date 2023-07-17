@@ -20,7 +20,7 @@ class Hamster {
 }
 
 const h1 = new Hamster("Ri", "Momo", 4.21);
-// Hamster is essentially a template and when you're using new, 
+// Hamster is essentially a template and when you're using new,
 // you're saying im using this template to create this new version
 
 console.log(h1);
@@ -49,14 +49,14 @@ class Person {
     this.mood = mood;
     mood = 0;
 
-    this.hamster = hamsters;
+    this.hamsters = hamsters;
     hamsters = [];
 
     this.bankAccount = bankAccount;
     this.bankAccount = 0;
   }
   getName() {
-    return this.name;
+    console.log(this.name);
   }
   getAge() {
     return this.age;
@@ -73,20 +73,87 @@ class Person {
   exercise() {
     this.weight--;
   }
-  ageUp() {
-    this.age++, this.height++, this.weight++, this.mood--, this.bankAccount + 10;
+  ageUp(num) {
+    this.age += num;
+    this.height++;
+    this.weight++;
+    this.mood--;
+    this.bankAccount += 10;
   }
   buyHamster(hamster) {
     this.hamsters.push(hamster);
-    this.mood += 10, 
-    this.bankAccount = this.bankAccount - getPrice();
+    this.mood += 10;
+    this.bankAccount -= hamster.getPrice();
   }
 }
 
 // ++++++++++++++++++++++++++++++++++++++++++++++
 
 // CREATE A STORY WITH YOUR PERSON CLASS
-// name, age, height, weight, mood, hamsters, bankAccount
+// Previous constructor (name, age, height, weight, mood, hamsters, bankAccount)
+// Test person
+// const p1 = new Person("Suki", 20, 66, 120, 10, ["h1"], 100);
+// console.log(p1.getName());
+// console.log(p1.getAge());
+// console.log(p1.getWeight());
+// p1.greet();
+// console.log(p1.eat());
+// console.log(p1.exercise());
+// console.log(p1.ageUp());
+// console.log(p1.buyHamster(h1));
 
-const c1 = new Person('Timmy', '5', '', '65', 'seen it all', '0', '');
-console.log(c1);
+const timmy = new Person("Timmy", 5, 60, 45, 10, ["h1"], 50);
+console.log(timmy);
+
+timmy.ageUp(5);
+console.log(`Timmy is now ${timmy.age}`);
+console.log("Timmy feels like he's seen it all");
+
+for (let i = 1; i <= 5; i++) {
+  timmy.eat();
+  console.log(`Timmy ate ${i} chicken`);
+}
+
+for (let i = 1; i <= 5; i++) {
+  timmy.exercise();
+  console.log(`Timmy's making gains. He worked out ${i} time`);
+}
+
+timmy.ageUp(9);
+const gus = new Hamster("Timmy", "Gus", 20);
+timmy.buyHamster(gus);
+console.log(gus);
+
+timmy.ageUp(15);
+console.log(`Timmy is now ${timmy.age}`);
+
+for (let i = 1; i <= 2; i++) {
+  timmy.eat();
+  console.log(`He eats ${i} times`);
+}
+
+for (let i = 1; i <= 2; i++) {
+  timmy.exercise();
+  console.log(`He works out ${i} times`);
+}
+
+class Dinner {
+  constructor(appetizer, entree, dessert) {
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+  }
+}
+
+class Chef {
+  cheffingItUp(appetizer, entree, dessert) {
+    const dinner = new Dinner(appetizer, entree, dessert);
+    console.log(dinner);
+  }
+}
+
+const remy = new Chef('', '', '');
+
+remy.cheffingItUp("Cheese", "Crackers", "Orange Juice");
+remy.cheffingItUp("Ramen", "Eggs", "Furikake");
+remy.cheffingItUp("Milkshake", "French Fries", "Smash Burger");
